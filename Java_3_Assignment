@@ -1,0 +1,368 @@
+1.)
+import java.util.*;
+
+class Assignment
+{
+    public static void main(String[] args)
+    {
+    Scanner sc=new Scanner(System.in);
+    int n=0;
+    int e=0,o=0,ne=0,p=0,z=0;
+        System.out.println("Enter no");
+    for(int i=1;i<=20;i++)
+    {
+        n = sc.nextInt();
+        if (n < 0)
+        {
+            ne++;
+        }
+        else
+        {
+            p++;
+        }
+        if (n % 2 == 0)
+        {
+            e++;
+        }
+        else
+        {
+            o++;
+        }
+        if (n == 0)
+        {
+            z++;
+        }
+    }
+        System.out.println("Positive "+ p);
+        System.out.println("Negative "+ ne);
+        System.out.println("Even "+ e);
+        System.out.println("Odd "+ o);
+        System.out.println("Zero "+ z);
+    }
+}
+
+
+
+
+2.) 
+
+class Assignment
+{
+    public static void main(String[] args)
+    {
+  
+    int arr[]= { 58,24,13,15,63,9,8,81,1,78};
+    int a[]=new int[5];
+    int b[]=new int[5];
+    for(int i=0;i<arr.length;i++)
+    {
+        if(i<5)
+        {
+          a[i]=arr[i];
+          }
+          else
+          {
+            b[i-5]=arr[i];
+          }
+      }
+      for(int i=0;i<5;i++)
+      {
+      System.out.println(a[i]+" "+b[i]);
+      }
+      }}
+      
+      
+
+3.)
+class Assignment
+{
+    public static void main(String[] args) {
+       parent p =new parent();
+       child c =new child();
+       p.print();
+       c.pr();
+       c.print();
+
+    }
+
+}
+class parent
+{
+    public void print()
+    {
+        System.out.println("This is parent class");
+    }
+}
+class child extends parent
+{
+    public void pr()
+    {
+        System.out.println("This is child class");
+    }
+}
+
+
+4.)
+import java.util.*;
+
+class Assignment
+{
+    public static void main(String[] args) {
+
+        Employee a[]=new Employee[3];
+        for (int i = 0; i < 3; i++) {
+             a[i]= new Employee();
+             a[i].emp();
+        }
+        for(int i=0;i<3;i++)
+        {
+            a[i].print();
+        }
+    }
+}
+class Employee
+{
+    String name,doj;
+    String salary;
+    void emp()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter name");
+         name=sc.nextLine();
+        System.out.println("Enter salary");
+         salary=sc.nextLine();
+        System.out.println("Enter date of joining");
+         doj=sc.nextLine();
+    }
+     void print()
+    {
+        System.out.println(name);
+        System.out.println(salary);
+        System.out.println(doj);
+    }
+}
+
+
+5.)
+import java.util.*;
+
+class Assignment {
+    public static void main(String ar[])
+    {
+         String s="Aman Rai";
+         String s2="";
+         for(int i=0;i<s.length();i++) {
+             char c = s.charAt(i);
+             if (c != ' ') {
+                 s2 = s2 + c;
+             } else {
+                 System.out.print(Character.toUpperCase(s2.charAt(0)) + "" + ".");
+               s2="";
+             }
+
+         }
+         int j=s.lastIndexOf(' ');
+         System.out.println(s.substring(j,s.length()));
+
+
+    }
+
+}
+
+
+
+6.)
+
+Equals() is a method while == is an operator.
+Equals() compares the content while == compare the refrence or address of the objects in the heap.
+Equals() cannot compare primitive data types while == can compare primitive data types.
+
+7.)
+        String buffer                                String builder
+1.) It is synchronized                          It is not synchronized
+2.) It is thread-safe                           It is not thread safe.
+3.) It is slow                                  It is fast
+
+
+8.)
+Variable - A variable with final keyword cannot be changed.
+Method- A final method cannot be overriden.
+Calss- A final class cannot be inherited.
+
+9.) Yes it is possible when System.exit() is used in try or catch block before finally.
+
+10.)
+Shallow Copy- When we want to create a copy of something such that the change are reflected in other one without 
+any memory allocation then it is called shallow copy. It is fast.It copies the refrence
+
+Deep Copy- When we want to create a copy of something such that the change are not reflected in other one with
+memory allocation then it is called deep copy. It is slow and refrence is not copied.
+
+
+11.)Arithmethic Exception
+
+12.)It is recommended to keep clean-up so that the finally will alwats be executed whether errors occur or not.
+
+13.)Array Index Out of Bound Exception
+
+14.)
+a.) 2
+b.) 1
+c.) 3
+
+
+15.)By using isEmpty() method.
+
+16.)
+import java.util.*;
+
+class Assignment {
+    public static void main(String ar[])
+    {
+        ArrayList<String> l1= new ArrayList<>();
+        ArrayList<String> l2=new ArrayList<>();
+        l1.add("a");
+        l1.add("b");
+        l1.add("c");
+        l2.add("d");
+        l2.add("e");
+        l2.add("f");
+
+        System.out.println(l1);
+        System.out.println(l2);
+        l1.addAll(l2);
+        System.out.println(l1);
+
+    }
+
+}
+
+
+
+
+17.) fill()
+
+18.) Generics
+
+19.)
+Comparable- Its sorts item on single element basis
+            It has compareTo() function
+Comparator- It can sort items on multiple element basis 
+            It has a compare() fucntion.
+            
+
+20.)
+ class EmployeeNotFoundException extends Exception {
+
+    public EmployeeNotFoundException(String msg) {
+        super(msg);
+    }
+}
+
+ class Check{
+
+    public void print() throws EmployeeNotFoundException {
+         System.out.println("This is my custom exception");
+    }
+}
+
+ class Employeep {
+    public static void main(String[] args) {
+
+      Check c=new Check();
+        try {
+
+            c.print();
+
+        } catch (Exception e) {
+            System.err.print(e);
+        }
+    }
+}
+
+
+
+21.) false true
+
+22.)
+import java.util.*;
+
+class Member {
+    String name,phno,add;
+    int age;
+    double salary;
+
+    Member(String name,int age,String phno,String add )
+    {
+        this.name=name;
+        this.age=age;
+        this.add=add;
+        this.phno=phno;
+
+
+    }
+    Member()
+    {}
+
+    void details(String name,int age,String phno,String add )
+    {
+        System.out.println("Name"+" "+ name);
+        System.out.println("Age"+" "+ age);
+        System.out.println("Phone No."+" "+ phno);
+        System.out.println("Address"+" "+ add);
+
+    }
+
+    void printSalary(double s)
+    {
+        this.salary=s;
+        System.out.println("Salary is"+" "+s);
+    }
+
+}
+
+class Employee extends Member
+{
+   String spc,dep;
+
+}
+
+class Manager extends Member
+{
+String spc,dep;
+}
+
+class Details
+{
+    public static void main(String ar[])
+    {
+        Member e=new Employee();
+        Member m=new Manager();
+
+        e.details("Aman",22,"6387104028","Ghaziabad");
+        e.printSalary(45000);
+        m.details("Ayush",34,"5678903456","Delhi");
+        m.printSalary(80000);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
